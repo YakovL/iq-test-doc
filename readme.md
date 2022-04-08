@@ -101,18 +101,17 @@ With a wallet signer, we can do various things with client's funds.
 Staking means providing client's funds to an enterprise's pool to get a reward later.
 <!-- how reward is calculated? is this like investing? can an enterprise go bankrupt? -->
 
-There's a number of `Enterprise` methods to control staking. Let's stake something first:
+There's a number of `Enterprise` methods to control staking. Let's stake some native tokens first:
 
-<!-- _amount: what units? (what token?) -->
 ```typescript
-const _amount = 100;
-const tx = await blockchain.enterprise(enterpriseAddress).stake(_amount);
+const amount = 100;
+const tx = await blockchain.enterprise(enterpriseAddress).stake(amount);
 ```
 
 As a result, we get a stake token (an NFT) which holds the staked amount and other info. Once we get it, we can call
 `Enterprise.getStakeTokenIds` to get the id of the stake token(s). To find out the stake amount, we can use
 `Enterprise.getStake(tokenId)`. There's also `increaseStake`, `decreaseStake` and `unstake` to manipulate the amount,
-several metadata getters. Finally, there's `getStakingReward`, `claimStakingReward` and `setEnterpriseTokenAllowance`.
+several metadata getters. Finally, there's `getStakingReward` and `claimStakingReward`.
 <!-- what does setEnterpriseTokenAllowance do? -->
 
 ### Renting
