@@ -135,4 +135,5 @@ ___estimating fees?
 Wrapping up
 -----------
 
-___
+We have discussed how to do basic operations with DeFi enterprises: staking, renting and swapping.
+___something about "much more"?
