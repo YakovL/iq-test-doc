@@ -135,5 +135,5 @@ ___estimating fees?
 Wrapping up
 -----------
 
-We have discussed how to do basic operations with DeFi enterprises: staking, renting and swapping.
+We have discussed how to do basic operations with DeFi enterprises via IQ SDK: staking, renting and swapping.
 ___something about "much more"?
