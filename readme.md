@@ -112,7 +112,6 @@ As a result, we get a stake token (an NFT) which holds the staked amount and oth
 `Enterprise.getStakeTokenIds` to get the id of the stake token(s). To find out the stake amount, we can use
 `Enterprise.getStake(tokenId)`. There's also `increaseStake`, `decreaseStake` and `unstake` to manipulate the amount,
 several metadata getters. Finally, there's `getStakingReward` and `claimStakingReward`.
-<!-- what does setEnterpriseTokenAllowance do? -->
 
 ### Renting
 
