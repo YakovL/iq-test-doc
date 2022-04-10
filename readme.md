@@ -128,7 +128,8 @@ Most methods return a promise of a `ContractTransaction` if there's no error.
 Since it has a `hash` property, the status can be further fetched or watched via standart tools like web3
 (for instance, using `web3.eth.getTransaction(hash)`).
 
-___fee in ContractTransaction?
+Likewise, one can find out the spent ___ fee by transaction hash.
+
 ___estimating fees?
 
 Wrapping up
