@@ -130,11 +130,24 @@ and this is generally discouraged.
 
 Now let's consider two ways to get services' tokens: renting and swapping.
 
-### Renting
-
-___
-
 ### Swapping
+
+Swapping is a straightforward way of getting service tokens: pay some ENT tokens,
+get some tokens of that service (also known as "power" tokens, let's call them "PWR"
+since we only consider using one service at a time here). IQ SDK makes it as simple as it sounds:
+
+```typescript
+const swapInTx = await blockchain.service(serviceAddress).swapIn(amount);
+```
+
+An `amount` of ENT here is swapped to the same amount of PWR.
+Likewise, they can be swapped back:
+
+```typescript
+const swapOutTx = await blockchain.service(serviceAddress).swapOut(amount);
+```
+
+### Renting
 
 ___
 
