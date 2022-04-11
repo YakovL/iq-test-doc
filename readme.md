@@ -129,6 +129,8 @@ Note: although creating more than one stake is technically possible, there's pro
 and this is generally discouraged.
 
 Now let's consider two ways to get services' tokens: renting and swapping.
+Such tokens are usually needed to get access to enterprises' services
+(for instance, monitoring some blockchain address in real time via some API).
 
 ### Swapping
 
@@ -203,5 +205,8 @@ as it is previewed by Metamask and can be tweaked anyway.
 Wrapping up
 -----------
 
-We have discussed how to do basic operations with DeFi enterprises via IQ SDK: staking, renting and swapping.
-___something about "much more"?
+We have discussed how to do basic operations with DeFi enterprises via IQ SDK:
+staking enterprise tokens, renting and swapping service tokens.
+There's much more that can be done with IQ SDK (take for instance the garbage collecting
+mechanism: can be a source of "free" tokens).
+Try it out and get ready to build rich DeFi apps with ease!
