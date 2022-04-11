@@ -188,16 +188,17 @@ If the client does it themselves, they also get the garbage collector fee back.
 On the other hand, after a certain period that operation becomes available for others
 which creates a "crowd-sourced garbage collecting".
 
-Statuses and fees
------------------
+Statuses and gas fees
+---------------------
 
 Most methods return a promise of a `ContractTransaction` if there's no error.
 Since it has a `hash` property, the status can be further fetched or watched via standart tools like web3
 (for instance, using `web3.eth.getTransaction(hash)`).
 
-Likewise, one can find out the spent ___ fee by transaction hash.
+Likewise, one can find out the spent gas by transaction hash.
 
-___estimating fees?
+Estimating gas fee is not currently provided by IQ SDK, but usually that's not necessary
+as it is previewed by Metamask and can be tweaked anyway.
 
 Wrapping up
 -----------
