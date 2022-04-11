@@ -1,7 +1,7 @@
 IQ SDK makes it simple to build applications powered by IQ Protocol.
-Interactions with enterprises can be quite complex; this article explains basics of 3 interactions:
-staking into enterprise pool and getting enterprise services' tokens via swapping and renting.
-Such tokens give various possibilities like opening access to certain APIs etc.
+Interactions with enterprises can be quite complex; this article explains the basics of three interactions:
+staking into an enterprise pool and getting enterprise services' tokens via swapping or renting.
+Such tokens give various possibilities, like opening access to certain APIs etc.
 
 To use a service, you'll need:
 
@@ -16,9 +16,9 @@ The SDK consists of [several packages](https://iqlabsorg.github.io/iq-sdk-js/) w
 
 To get SDK features for a specific blockchain, one needs a provider for that blockchain.
 For now, a single generic `EIP155BlockchainProvider` is available in the `@iqprotocol/eip155` package:
-it supports all EVM compatible blockchains. The SDK is extendable and other providers can be created in the future.
+it supports all EVM compatible blockchains. The SDK is extendable, and other providers can be created in the future.
 
-Let's install dependencies to fetch some info and do some staking/renting/swapping:
+Let's install dependencies to fetch some info and do some staking, renting and swapping:
 
 ```
 npm i @iqprotocol/eip155  ethers typescript ts-node @types/node
@@ -45,7 +45,7 @@ so let's create one. The signer contains info about the chain that we're going t
 and about the client. For instance, if we'd like to get info about an enterprise
 in BSC Testnet (a "read-only" method), we have to [find](https://docs.ricefarm.fi/guides/metamask-add-bsc)
 that its RPC endpoint is `https://data-seed-prebsc-1-s1.binance.org:8545/` (or run our own node and use its endpoint),
-take some valid network address (one of ours or just from an explorer) and
+take some valid network address (one of ours or just from an explorer), and
 create a `VoidSigner` (this signer is suitable for "read-only" methods):
 
 ```typescript
@@ -56,13 +56,13 @@ const clientAddress = '0x049153b8DAe0a232Ac90D20C78f1a5D1dE7B7dc5';
 const signer = new VoidSigner(clientAddress, provider);
 ```
 
-To check the connection we can try to get the chain id (should be 97 in this case):
+To check the connection, we can try to get the chain id (should be 97 in this case):
 
 ```typescript
 blockchain.getChainId().then(({ reference }) => console.log(`chain id is ${reference}`));
 ```
 
-For a "write" method (like swap, stake or rent), another type of signer is required, for instance a Wallet:
+For a "write" method (like swap, stake, or rent), another type of signer is required, for instance a Wallet:
 
 ```typescript
 import { Wallet, providers } from 'ethers';
@@ -72,11 +72,12 @@ const clientPrivateKey = '0xf3921efdfe42ea58356da0ab453ac073b6ab7a4a58f20aebfa40
 const signer = new Wallet(clientPrivateKey, provider);
 ```
 
-Learning about enterprises and services <!-- where can we find that address? (Parsiq enterprise in BSC Testnet) *serviceFeePercent = ? -->
+Learning about enterprises and services
 ---------------------------------------
 Now that we have a signer and can connect to the network, we can also interact with an enterprise.
 
-First, let's get some info about it. For example, for Parsiq enterprise in BSC Testnet we can call
+First, let's get some info about it. For example, for Parsiq enterprise in BSC Testnet we can run
+the following code to get its metadata, services' addresses and metadata:
 
 ```typescript
 (async() => {
@@ -94,7 +95,7 @@ First, let's get some info about it. For example, for Parsiq enterprise in BSC T
 })();
 ```
 
-to get its metadata, services' addresses and metadata. Thie "write" methods are called in a similar fashion.
+The "write" methods are called in a similar fashion.
 
 Stake, rend and swap
 --------------------
