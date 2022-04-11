@@ -160,7 +160,33 @@ but transferring is out of the scope of this article.
 
 ### Renting
 
-___
+Swapping is a method of `Service` since it doesn't involve any fees in ENT (only tx gas fees);
+renting, however, involves paying a fee to the enterprise, so it's a method of `Enterprise`.
+
+If we want to rent `rentalAmount` of PWR of `serviceAddress` for `rentalPeriod`, we have to
+pay a fee in some tokens identified by `paymentTokenAddress`. In most cases, the fee is paid
+in ENT, but that's not obligatory. Since the fee depends on all these parameters,
+it's reasonable to ask for an estimation first:
+
+```typescript
+const esitmatedFee = await blockchain.enterprise(enterpriseAddress)
+    .estimateRentalFee(serviceAddress, paymentTokenAddress, rentalAmount, rentalPeriod);
+```
+
+Once we've come up with an amount that we are ok to pay, we can call
+
+```typescript
+const rentTx = await blockchain.enterprise(enterpriseAddress)
+    .rent(serviceAddress, paymentTokenAddress, rentalAmount, rentalPeriod, maxPayment);
+```
+
+Note: there's also `Service.estimateRentalFee` which promises an object containing
+three parts of the fee: pool, service and garbage collector fee. The latter may deservie a closer consideration.
+In fact, on renting PWR, the client also gets another NFT that holds info about the rent.
+Once rental period ends, the rented PWR no longer "work" and should be transfered back to the pool.
+If the client does it themselves, they also get the garbage collector fee back.
+On the other hand, after a certain period that operation becomes available for others
+which creates a "crowd-sourced garbage collecting".
 
 Statuses and fees
 -----------------
