@@ -1,10 +1,14 @@
-IQ SDK makes it simple to stake, rent or swap tokens using services of various enterprises. <!-- closer to business? more features? -->
+IQ SDK makes it simple to build applications powered by IQ Protocol.
+Interactions with enterprises can be quite complex; this article explains basics of 3 interactions:
+staking into enterprise pool and getting enterprise services' tokens via swapping and renting.
+Such tokens give various possibilities like opening access to certain APIs etc.
 
 To use a service, you'll need:
 
 * the network's RPC endpoint and the client's address and private key
-* the enterprise address <!-- where to get from? (no listing available) -->
-* the service address <!-- where to get from? -->
+* the enterprise address
+* the service address
+* enterprise tokens (for staking and usually for renting and swapping)
 
 Installing IQ SDK
 -----------------
