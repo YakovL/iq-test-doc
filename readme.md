@@ -101,23 +101,34 @@ Stake, rend and swap
 --------------------
 
 With a wallet signer, we can do various things with client's funds.
+Usually all the operations are done with the enterprise's tokens, so let's assume you
+have some already. We'll see that it's not the only option in some cases, though.
+
+To make explanations simpler, let's call enterprise tokens "ENT".
 
 ### Staking
 
-Staking means providing client's funds to an enterprise's pool to get a reward later.
-<!-- how reward is calculated? is this like investing? can an enterprise go bankrupt? -->
+Staking means providing client's ENT tokens to the enterprise's pool to get a reward later.
+The staking reward is added to the client's stake and is proportional to their share in the pool.
+The rewards originate from fees to the enterprise, so they also depend on how popular are
+the services of the enterprise.
 
-There's a number of `Enterprise` methods to control staking. Let's stake some native tokens first:
+There's a number of `Enterprise` methods to control staking. Let's stake some ENT first:
 
 ```typescript
 const amount = 100;
 const tx = await blockchain.enterprise(enterpriseAddress).stake(amount);
 ```
 
-As a result, we get a stake token (an NFT) which holds the staked amount and other info. Once we get it, we can call
+As a result, we get a stake token (an sNFT) which holds the staked amount and other info. Once we get it, we can call
 `Enterprise.getStakeTokenIds` to get the id of the stake token(s). To find out the stake amount, we can use
 `Enterprise.getStake(tokenId)`. There's also `increaseStake`, `decreaseStake` and `unstake` to manipulate the amount,
 several metadata getters. Finally, there's `getStakingReward` and `claimStakingReward`.
+
+Note: although creating more than one stake is technically possible, there's probably no reason to do so,
+and this is generally discouraged.
+
+Now let's consider two ways to get services' tokens: renting and swapping.
 
 ### Renting
 
