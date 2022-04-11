@@ -30,7 +30,7 @@ and import the provider:
 import { EIP155BlockchainProvider } from '@iqprotocol/eip155';
 ```
 
-Preparing a signer <!-- Wallet – correct signer? -->
+Preparing a signer
 ------------------
 
 To instantiate a blockchain provider, we need a signer that'll be passed like this:
@@ -44,8 +44,9 @@ const blockchain = new EIP155BlockchainProvider({
 so let's create one. The signer contains info about the chain that we're going to use
 and about the client. For instance, if we'd like to get info about an enterprise
 in BSC Testnet (a "read-only" method), we have to [find](https://docs.ricefarm.fi/guides/metamask-add-bsc)
-that its RPC endpoint is `https://data-seed-prebsc-1-s1.binance.org:8545/`, take some valid network address
-(one of ours or just from an explorer) and create a `VoidSigner` (this signer is suitable for "read-only" methods):
+that its RPC endpoint is `https://data-seed-prebsc-1-s1.binance.org:8545/` (or run our own node and use its endpoint),
+take some valid network address (one of ours or just from an explorer) and
+create a `VoidSigner` (this signer is suitable for "read-only" methods):
 
 ```typescript
 import { VoidSigner, providers } from 'ethers';
