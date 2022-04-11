@@ -15,8 +15,8 @@ Installing IQ SDK
 The SDK consists of [several packages](https://iqlabsorg.github.io/iq-sdk-js/) with [sources in a monorepo](https://github.com/iqlabsorg/iq-sdk-js/).
 
 To get SDK features for a specific blockchain, one needs a provider for that blockchain.
-For now, a single generic `EIP155BlockchainProvider` that supports all EVM compatible blockchains
-is available in the `@iqprotocol/eip155` package. The SDK is extendable and other providers can be created in the future.
+For now, a single generic `EIP155BlockchainProvider` is available in the `@iqprotocol/eip155` package:
+it supports all EVM compatible blockchains. The SDK is extendable and other providers can be created in the future.
 
 Let's install dependencies to fetch some info and do some staking/renting/swapping:
 
