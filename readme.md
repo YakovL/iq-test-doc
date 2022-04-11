@@ -147,6 +147,17 @@ Likewise, they can be swapped back:
 const swapOutTx = await blockchain.service(serviceAddress).swapOut(amount);
 ```
 
+Note that swapping can be forbidden for some services though.
+This may depend on their functionality and financial model.
+To figure out whether swapping is enabled, use
+
+```typescript
+const isSwappingEnabled = await blockchain.service(serviceAddress).isSwappingEnabled();
+```
+
+Similarly, transferring PWR to another client may be forbidden,
+but transferring is out of the scope of this article.
+
 ### Renting
 
 ___
